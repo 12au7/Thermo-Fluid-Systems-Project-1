@@ -54,17 +54,17 @@ ROI_CCGT = ROI*100
 
 IRR = xval;
 IRR_CCGT = IRR*100 % Percent
-
+pause
 % F Plant
 
-c = 1722; % [MW] E plant capacity
+c = 1512; % [MW] E plant capacity
 c_f = .53; % Capacity factor
 PPA = .51; % [$/KWH] Power Purchase Agreement
-eta = .53; % Thermal efficiency
+eta = .604; % Thermal efficiency
 fc = 8.71; % [$/Million BTU] fuel cost
 c02e = 117; % [lbs c02/Million BTU] c02 emmisions
 cf = 60; % [$/ton c02] carbon fee
-cc = 2152.5;  % [M$] construction cost
+cc = 2041.2;  % [M$] construction cost
 
 e_py = c * c_f * 365 * 24 * PPA * 1000; % [$] earned per year
 
@@ -111,17 +111,17 @@ ROI_CCGT = ROI*100
 
 IRR = xval;
 IRR_CCGT = IRR*100 % Percent
-
+pause
 % H Plant
 
-c = 1722; % [MW] E plant capacity
+c = 1760; % [MW] E plant capacity
 c_f = .53; % Capacity factor
 PPA = .51; % [$/KWH] Power Purchase Agreement
-eta = .53; % Thermal efficiency
+eta = .626; % Thermal efficiency
 fc = 8.71; % [$/Million BTU] fuel cost
 c02e = 117; % [lbs c02/Million BTU] c02 emmisions
 cf = 60; % [$/ton c02] carbon fee
-cc = 2152.5;  % [M$] construction cost
+cc = 2376;  % [M$] construction cost
 
 e_py = c * c_f * 365 * 24 * PPA * 1000; % [$] earned per year
 
