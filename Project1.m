@@ -183,7 +183,6 @@ ROI_Plant_F_Carbon_Fee = ROI*100;
 IRR = xval;
 IRR_Plant_F_Carbon_Fee = IRR*100; % Percent
 pause
-pause
 
 
 
@@ -257,7 +256,7 @@ fc = @(x)interp1(x_ptsH,y_ptsH,x,'linear');
 figure(3)
 plot(x_ptsH,y_ptsH,x_ptsHN,y_ptsHN)
 grid on
-title('Cumulative Cash Flow diagram for Plant H (w/Carbon Fee)')
+title('Cumulative Cash Flow diagram for Plant H')
 xlabel('Years')
 ylabel('Millions of Dollars')
 legend('W/ Carbon Fee','W/o Carbon Fee')
@@ -279,34 +278,30 @@ pause
 
 
 % Outputs
+E1 = 'E w/o Carbon fee';
+E2 = 'E w/ Carbon fee';
+E3 = [NPV_Plant_E/1000, PayBackPeriod_Plant_E,...
+ ROI_Plant_E, IRR_Plant_E];
+E4 = [NPV_Plant_E_Carbon_Fee/1000,PayBackPeriod_Plant_E_Carbon_Fee,...
+ ROI_Plant_E_Carbon_Fee, IRR_Plant_E_Carbon_Fee];
 
-NPV_Plant_E
-NPV_Plant_E_Carbon_Fee
-PayBackPeriod_Plant_E
-PayBackPeriod_Plant_E_Carbon_Fee
-ROI_Plant_E
-ROI_Plant_E_Carbon_Fee
-IRR_Plant_E
-IRR_Plant_E_Carbon_Fee
+F1 = 'F w/o Carbon fee';
+F2 = 'F w/ Carbon fee';
+F3 = [NPV_Plant_F/1000, PayBackPeriod_Plant_F,...
+ ROI_Plant_F, IRR_Plant_F];
+F4 = [NPV_Plant_F_Carbon_Fee/1000,PayBackPeriod_Plant_F_Carbon_Fee,...
+ ROI_Plant_F_Carbon_Fee, IRR_Plant_F_Carbon_Fee];
 
-NPV_Plant_F
-NPV_Plant_F_Carbon_Fee
-PayBackPeriod_Plant_F_Carbon_Fee
-PayBackPeriod_Plant_F
-ROI_Plant_F
-ROI_Plant_F_Carbon_Fee
-IRR_Plant_F
-IRR_Plant_F_Carbon_Fee
+H1 = 'H w/o Carbon fee';
+H2 = 'H w/ Carbon fee';
+H3 = [NPV_Plant_H/1000 PayBackPeriod_Plant_H,...
+ ROI_Plant_H, IRR_Plant_H];
+H4 = [NPV_Plant_H_Carbon_Fee/1000,PayBackPeriod_Plant_H_Carbon_Fee,...
+ ROI_Plant_H_Carbon_Fee, IRR_Plant_H_Carbon_Fee];
 
-NPV_Plant_H
-NPV_Plant_H_Carbon_Fee
-PayBackPeriod_Plant_H
-PayBackPeriod_Plant_H_Carbon_Fee
-ROI_Plant_H
-ROI_Plant_H_Carbon_Fee
-IRR_Plant_H
-IRR_Plant_H_Carbon_Fee
+formatSpec = 'For Plant %s, the NPV was $%4.4f Billion, the payback period was %4.2f years, the ROI was %2.2f%%, and the IRR was %2.2f%%.\n';
 
+fprintf(formatSpec,E1,E3,E2,E4,F1,F3,F2,F4,H1,H3,H2,H4)
 figure(4)
 plot(x_ptsE,y_ptsE,x_ptsF,y_ptsF,x_ptsH,y_ptsH)
 grid on
